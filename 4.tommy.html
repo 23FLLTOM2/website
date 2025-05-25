@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Jinhyuk introduction</title>
+  <link rel="stylesheet" href="tommy.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: navy;
+      margin: 0;
+      padding: 20px;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    h2#mainTitle {
+      font-size: 72px;
+      text-align: center;
+      margin-top: 60px;
+      transition: font-size 0.3s;
+    }
+
+    .info-text {
+      text-align: center;
+      font-size: 18px;
+      margin: 20px;
+      transition: color 0.3s;
+    }
+
+    button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .quote {
+      font-size: 26px;
+      text-align: center;
+      margin: 40px auto;
+      padding: 20px;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      border-radius: 10px;
+      max-width: 700px;
+    }
+
+    /* 야간 모드 */
+    body.dark {
+      background-color: #111;
+      color: #ddd;
+    }
+
+    body.dark button {
+      background-color: #444;
+    }
+
+    body.dark .quote {
+      background: linear-gradient(to right, #444, #222);
+    }
+
+    body.dark a {
+      color: #9cbcff;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    alert("Welcome to my Website!");
+    console.log("Je m'appelle Thomas");
+  </script>
+
+  <h1><a href="4.tommy.html">Jinhyuk</a></h1>
+
+  <button id="modeBtn" onclick="toggleMode()">야간 모드로 전환</button>
+
+  <ol>
+    <li><a href="1.tommy.html">PROFILE</a></li>
+    <li><a href="2.tommy.html">FAVOURITES</a></li>
+    <li><a href="3.tommy.html">YSAL</a></li>
+  </ol>
+
+  <h2 id="mainTitle">Welcome to my website!</h2>
+
+  <div class="quote">
+    🌌 <em>Carve your name into those</em> <strong style="color: gold;">✨shining stars✨</strong> 🌠
+  </div>
+
+  <p class="info-text">Je n'aime pas étudier le français!</p>
+
+  <button onclick="highlightContent()">내용 강조하기</button>
+
+  <script>
+    let isNight = false;
+
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.getElementById("modeBtn");
+
+      body.classList.toggle("dark");
+      isNight = !isNight;
+      btn.innerText = isNight ? "주간 모드로 전환" : "야간 모드로 전환";
+    }
+
+    function highlightContent() {
+      const title = document.getElementById("mainTitle");
+      title.style.fontSize = "100px";
+      title.style.textShadow = "2px 2px gray";
+
+      const infos = document.getElementsByClassName("info-text");
+      for (let i = 0; i < infos.length; i++) {
+        infos[i].style.color = "tomato";
+        infos[i].style.fontWeight = "bold";
+      }
+    }
+  </script>
+</body>
+</html>

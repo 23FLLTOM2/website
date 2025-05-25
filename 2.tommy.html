@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Jinhyuk introduction</title>
+  <link rel="stylesheet" href="tommy.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      line-height: 1.6;
+      padding: 20px;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    body.dark {
+      background-color: #111;
+      color: #eee;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    img, video {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    alert("Je n'aime pas étudier le français!");
+    console.log("Front-End는 어려워요!");
+  </script>
+
+  <h1><a href="4.tommy.html">Favourites</a></h1>
+
+  <button id="modeBtn" onclick="toggleMode()">야간 모드로 전환</button>
+
+  <ol>
+    <li><a href="1.tommy.html">Profile</a></li>
+    <li><a href="2.tommy.html">FAVOURITES</a></li>
+    <li><a href="3.tommy.html">SSG Grand Tour 2025</a></li>
+  </ol>
+
+  <h2>1. <a href="https://www.mlb.com/dodgers" target="_blank">Baseball</a> (여기에 안 넣었지만 최강 두산도 화이팅!)</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Los_Angeles_Dodgers_Logo.svg/1200px-Los_Angeles_Dodgers_Logo.svg.png" width="40%">
+
+  <h3 style="font-size: 24px;">2. <a href="https://www.manutd.com/" target="_blank">Football</a> (GGMU as the reds go marching on on on!)</h3>
+  <img src="https://www.logo.wine/a/logo/Manchester_United_F.C./Manchester_United_F.C.-Logo.wine.svg" width="40%">
+
+  <h4 style="font-size: 24px;">3. Food (고기는 거의 다 좋아합니다!)</h4>
+  <img src="https://www.foodicon.co.kr/news/photo/202102/10337_15887_438.jpg" width="40%">
+
+  <h5 style="font-size: 24px;">4. Sleeping (잠은 소중해!)</h5>
+  <img src="https://health.chosun.com/site/data/img_dir/2017/12/01/2017120101499_0.jpg" width="40%">
+
+  <h6 style="font-size: 24px;">5. Choir (합창)</h6>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkZEtXBsMjS-uKdNZvO151-AhVSrGJls70g&s" width="40%">
+
+  <div style="margin-top: 36px;">
+    <h2>📺 5월 30일 제가 부를 합창 곡입니다. 참고해주시길</h2>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/PU479oKLtDY"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <h1 style="font-size: 24px; display: inline;">6. Tour(여행)</h1>
+  <button onclick="toggleTour()" style="margin-left: 10px;">자세히 보기</button>
+
+  <div id="tourDetail" style="display: none; margin-top: 1rem;">
+    <p>전역 후 터키 여행 가서 찍은 사진들입니다. 이스탄불에서의 경험이 특히 기억에 남습니다.</p>
+
+    <img src="C:\Users\cjinh\vite-project\KakaoTalk_20250523_193803227_01.jpg" width="80%">
+
+    <p>성당 → 모스크 → 박물관 → 다시 모스크. 같은 장소지만 시대마다 다른 역할을 했던 이곳은 정말 특별했습니다.</p>
+
+    <video width="80%" controls>
+      <source src="KakaoTalk_20250523_194346804.mp4" type="video/mp4">
+      이 브라우저는 video 태그를 지원하지 않습니다.
+    </video>
+
+    <p>돈두르마를 잡는 건 정말 어려웠습니다. 기회를 만든다는 것도, 잡는다는 것도 쉽지 않다는 걸 느꼈어요.</p>
+
+    <img src="C:\Users\cjinh\vite-project\KakaoTalk_20250523_193803227.jpg" width="80%">
+
+    <p>수능 문제에 나왔던 그림을 실제로 보니 정말 감격스러웠습니다.  
+       열흘간의 패키지 여행은 앞으로의 시야를 넓히는 좋은 기회였습니다.</p>
+  </div>
+
+  <h2 style="font-size: 24px; font-weight: bold; margin-top: 50px;">🚫 Dislikes</h2>
+
+  <p><strong style="font-size: 18px;">1. 수학</strong> — 수능 <strong>4번</strong> 보게 만든 가장 큰 원흉</p>
+  <img src="https://pimg.mk.co.kr/meet/neds/2021/07/image_readtop_2021_676813_16262028634714899.jpg" width="40%">
+
+  <p><strong style="font-size: 18px;">2. 프랑스어</strong> — 나는 사실 불문과가 아니었나봐 하하  
+     <strong>Je n'aime pas étudier le français!</strong></p>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz96zRpM6hkzeWIhFIoWWx5MAUteJcPw9keg&amp;s" width="40%">
+
+  <p><strong style="font-size: 18px;">3. 코딩</strong> — 요즘 내 스트레스의 주 원인.  
+     내가 아는 것이라곤 <code>import numpy as np</code>지만, YSAL(학회)은 떠나지 않겠습니다.  
+     <strong>YSAL에 대해 충성충성!</strong></p>
+  <img src="https://www.snunews.com/news/photo/201609/16240_9455_4715.jpg" width="40%">
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+      const btn = document.getElementById('modeBtn');
+      btn.innerText = document.body.classList.contains('dark') ? "주간 모드로 전환" : "야간 모드로 전환";
+    }
+
+    function toggleTour() {
+      const detail = document.getElementById('tourDetail');
+      detail.style.display = detail.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

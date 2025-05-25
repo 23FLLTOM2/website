@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Jinhyuk introduction</title>
+  <link rel="stylesheet" href="tommy.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      line-height: 1.6;
+      transition: background-color 0.4s, color 0.4s;
+    }
+    body.dark {
+      background-color: #111;
+      color: #eee;
+    }
+    a {
+      color: royalblue;
+      text-decoration: none;
+    }
+    h1 a {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+    #weather-box {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    alert("Thomas on fire!");
+    console.log("코딩은 나빠요!");
+  </script>
+
+  <h1><a href="4.tommy.html">Jinhyuk</a></h1>
+
+  <button id="modeBtn" onclick="toggleMode()">야간 모드로 전환</button>
+
+  <ol>
+    <li><a href="1.tommy.html">PROFILE</a></li>
+    <li><a href="2.tommy.html">FAVOURITES</a></li>
+    <li><a href="3.tommy.html">SSG GrandTour 2025</a></li>
+  </ol>
+
+  <h2>You can call me Thomas</h2>
+  <p><strong>이름:</strong> 최진혁 (Jinhyuk Choi), <strong>Thomas</strong> — 토마스와 친구들, 톰과 제리를 좋아해서 붙인 별명입니다.</p>
+  <p><strong>생년월일:</strong> 2001년 04월 25일</p>
+  <p><strong>출생지:</strong> 서울특별시</p>
+  <p><strong>거주지:</strong> 경기도 의왕시</p>
+  <p><strong>MBTI:</strong> ESTP</p>
+  <p><strong>키:</strong> Around 5–6 feet (대략 180cm 조금 안 됨)</p>
+  <p>
+    <strong>특이사항:</strong> <u>군대에서 대학간 4수생</u> — 가급적 
+    <a href="https://kangnam.dshw.co.kr/main/main.do" target="_blank">요기</a>나 
+    <a href="https://rokaf.airforce.mil.kr/sites/airforce/index.do" target="_blank">요기</a>보단 
+    대학 바로 가세요!
+  </p>
+
+  <img src="https://i.ytimg.com/vi/abovn7wAm-A/sddefault.jpg" width="50%">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1VVKDE8aDUxuP5JZJeq01pJcaDy-MHC_MnQ&s" width="50%">
+
+  <div id="weather-box">
+    <h2>🏠 우리집 날씨 (의왕시)</h2>
+    <div id="weather">날씨 정보를 불러오는 중...</div>
+  </div>
+
+  <script>
+    let isNight = false;
+    function toggleMode() {
+      const body = document.body;
+      const btn = document.getElementById("modeBtn");
+      body.classList.toggle("dark");
+      isNight = !isNight;
+      btn.innerText = isNight ? "주간 모드로 전환" : "야간 모드로 전환";
+    }
+
+    const API_KEY = "b07eabc24ff84fb69878b40a4923f04e";
+    const CITY = "Uiwang";
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric&lang=kr`;
+
+    fetch(URL)
+      .then(response => {
+        if (!response.ok) throw new Error("날씨 정보 불러오기 실패");
+        return response.json();
+      })
+      .then(data => {
+        const weather = document.getElementById("weather");
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+        const icon = data.weather[0].icon;
+        weather.innerHTML = `
+          <p><strong>현재 온도:</strong> ${temp}°C</p>
+          <p><strong>상태:</strong> ${desc} <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}"></p>
+        `;
+      })
+      .catch(error => {
+        document.getElementById("weather").innerText = "날씨 정보를 불러오지 못했습니다.";
+        console.error("Error fetching weather:", error);
+      });
+  </script>
+</body>
+</html>
